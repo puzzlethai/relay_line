@@ -3,20 +3,11 @@
  * Created by IntelliJ IDEA.
  * User: OZONE
  * Date: 19/6/2560
- * Time: 10:32
- *     <!--const channel_ID = '1519057505';-->
- *   <!--const channel_Secret =   '5997cf65a3c3789378fa99526d0f1b8c';-->
- *    <!--const callback_url = 'https://puzzlethai.github.io/testLineLogin/';-->
- *
- *
- *
- *
- *
- *
+ * Time: 14:57
  */
 $client_id = "1519057505";
-$client_secret = "5997cf65a3c3789378fa99526d0f1b8c";
-$redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com%2Frelay_line.php";
+$client_secret = "{{ไม่สามารถเปิดเผยได้}}";
+$redirect_uri = "http%3A%2F%2Fwww.kidkarnmai.com%2Fline%2Fauth%2Fcloseline.php";
 $token = "";
 
 function getToken($code){
@@ -25,7 +16,7 @@ function getToken($code){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v2/oauth/accessToken",
+        CURLOPT_URL => "https://api.line.me/v1/oauth/accessToken",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
@@ -48,7 +39,7 @@ function getProfile(){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v2/profile",
+        CURLOPT_URL => "https://api.line.me/v1/profile",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
