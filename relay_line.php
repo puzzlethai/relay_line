@@ -67,3 +67,6 @@ function getProfile(){
 $obj = json_decode(getToken($_GET['code']),true);
 $token = $obj['access_token'];
 $obj_profile = json_decode(getProfile(),true);
+
+window.opener.loginCallback("<?php echo $token ?>");
+window.close();
