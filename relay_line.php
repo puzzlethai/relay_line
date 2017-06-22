@@ -42,8 +42,8 @@ function getToken($code){
     return $response;
 }
 
-function getProfile(){
-    global $token;
+function getProfile($token){
+//    global $token;
 
     $curl = curl_init();
 
@@ -66,7 +66,7 @@ function getProfile(){
 
 $obj = json_decode(getToken($_GET['code']),true);
 $token = $obj['access_token'];
-$obj_profile = json_decode(getProfile(),true);
+$obj_profile = json_decode(getProfile($token),true);
 $displayName = $obj_profile['displayName'];
 $userId = $obj_profile['userId'];
 $pictureUrl = $obj_profile['pictureUrl'];
