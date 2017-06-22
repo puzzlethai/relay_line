@@ -67,6 +67,19 @@ function getProfile(){
 $obj = json_decode(getToken($_GET['code']),true);
 $token = $obj['access_token'];
 $obj_profile = json_decode(getProfile(),true);
+$displayName = $obj_profile['displayName'];
+$userId = $obj_profile['userId'];
+$pictureUrl = $obj_profile['pictureUrl'];
+$statusMessage = $obj_profile['statusMessage'];
 
-window.opener.loginCallback("<?php echo $token ?>");
+
+window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
 window.close();
+
+/*{
+
+    "userId":"Ufr47556f2e40dba2456887320ba7c76d",
+  "displayName":"Brown",
+  "pictureUrl":"https://example.com/abcdefghijklmn",
+  "statusMessage":"Hello, LINE!"
+}*/
