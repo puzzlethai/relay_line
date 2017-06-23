@@ -77,11 +77,9 @@ $displayName = 'EAK';
 $pictureUrl = null;
 $statusMessage = 'Keep Trying';
 $userId = '12345';
-/*window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
-*/
-echo $displayName;
+window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
 window.close();
-echo $userId;
+
 
 
 //    "userId":"Ufr47556f2e40dba2456887320ba7c76d",
