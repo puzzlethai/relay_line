@@ -65,16 +65,18 @@ function getProfile($token){
 }
 
 $obj = json_decode(getToken($_GET['code']),true);
-echo $obj;
+
 $token = $obj['access_token'];
 echo $token;
-$obj_profile = json_decode(getProfile($token),true);
-$displayName = $obj_profile['displayName'];
-$userId = $obj_profile['userId'];
-$pictureUrl = $obj_profile['pictureUrl'];
-$statusMessage = $obj_profile['statusMessage'];
-
-
+//$obj_profile = json_decode(getProfile($token),true);
+//$displayName = $obj_profile['displayName'];
+//$userId = $obj_profile['userId'];
+//$pictureUrl = $obj_profile['pictureUrl'];
+//$statusMessage = $obj_profile['statusMessage'];
+$diplayName = 'EAK';
+$pictureUrl = null;
+$statusMessage = 'Keep Trying';
+$userId = '12345';
 window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
 window.close();
 
