@@ -25,7 +25,7 @@ function getToken($code){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v1/oauth/accessToken",
+        CURLOPT_URL => "https://api.line.me/v2/oauth/accessToken",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
@@ -48,7 +48,7 @@ function getProfile(){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.line.me/v1/profile",
+        CURLOPT_URL => "https://api.line.me/v2/profile",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
@@ -64,21 +64,22 @@ function getProfile(){
     return $response;
 }
 
+
 $obj = json_decode(getToken($_GET['code']),true);
 
-$token = $obj['access_token'];
-//echo $token;
-$obj_profile = json_decode(getProfile($token),true);
+
+/*$obj_profile = json_decode(getProfile(),true);
 $displayName = $obj_profile['displayName'];
 $userId = $obj_profile['userId'];
 $pictureUrl = $obj_profile['pictureUrl'];
-$statusMessage = $obj_profile['statusMessage'];
+$statusMessage = $obj_profile['statusMessage'];*/
 
-window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
+window.opener.loginCallback("<?php echo $token ?>");
 window.close();
 
 
-
+/*window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
+*/
 //    "userId":"Ufr47556f2e40dba2456887320ba7c76d",
 //  "displayName":"Brown",
 //  "pictureUrl":"https://example.com/abcdefghijklmn",
