@@ -67,7 +67,7 @@ function getProfile($token){
 $obj = json_decode(getToken($_GET['code']),true);
 
 $token = $obj['access_token'];
-echo $token;
+//echo $token;
 //$obj_profile = json_decode(getProfile($token),true);
 //$displayName = $obj_profile['displayName'];
 //$userId = $obj_profile['userId'];
