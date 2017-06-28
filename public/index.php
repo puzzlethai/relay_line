@@ -1,4 +1,5 @@
 <?php
+echo 'ทดสอบการใช้คำสั่ง echo';
 /**
  * Created by IntelliJ IDEA.
  * User: OZONE
@@ -14,6 +15,7 @@
  *
  *
  */
+/*
 $client_id = "1519057505";
 $client_secret = "5997cf65a3c3789378fa99526d0f1b8c";
 $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com%2Findex.php";
@@ -67,16 +69,16 @@ function getProfile(){
 
 $obj = json_decode(getToken($_GET['code']),true);
 
-
+*/
 /*$obj_profile = json_decode(getProfile(),true);
 $displayName = $obj_profile['displayName'];
 $userId = $obj_profile['userId'];
 $pictureUrl = $obj_profile['pictureUrl'];
 $statusMessage = $obj_profile['statusMessage'];*/
-
+/*
 window.opener.loginCallback("<?php echo $token ?>");
 window.close();
-
+*/
 
 /*window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
 */
