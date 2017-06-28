@@ -1,5 +1,5 @@
 <?php
-echo 'ทดสอบการใช้คำสั่ง echo';
+echo 'test echo';
 /**
  * Created by IntelliJ IDEA.
  * User: OZONE
