@@ -28,7 +28,6 @@ $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com";
 
 function getToken($code){
     global $client_id, $client_secret,$redirect_uri;
-alert("token");
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -51,8 +50,6 @@ alert("token");
 
 function getProfile($token){
    // global ;
-    alert("profile");
-    alert($token);
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -78,13 +75,19 @@ function getProfile($token){
 
 $ozone = $obj['access_token'];
 echo 'token : '.$ozone."<br>";
-$obj_profile = json_decode(getProfile($obj['access_token']),true);
-$displayName = $obj_profile['displayName'];
-$userId = $obj_profile['userId'];
-$pictureUrl = $obj_profile['pictureUrl'];
-$statusMessage = $obj_profile['statusMessage'];
 
-echo 'userId'.$userIdl."<br>";
+$obj_profile = json_decode(getProfile($obj['access_token']),true);
+echo "obj_profile --> $obj_profile";
+$displayName = $obj_profile['displayName'];
+echo "displayName --> $displayName";
+$userId = $obj_profile['userId'];
+echo "userId --> $userId";
+$pictureUrl = $obj_profile['pictureUrl'];
+echo "pictureUrl --> $pictureUrl";
+$statusMessage = $obj_profile['statusMessage'];
+echo "statusMessage --> $statusMessage";
+
+//echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
 window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
