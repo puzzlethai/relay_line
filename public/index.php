@@ -77,25 +77,25 @@ $ozone = $obj['access_token'];
 echo 'token : '.$ozone."<br>";
 
 $obj_profile = json_decode(getProfile($obj['access_token']),true);
-echo "obj_profile --> $obj_profile";
+echo "obj_profile --> $obj_profile<br>";
 $displayName = $obj_profile['displayName'];
-echo "displayName --> $displayName";
+echo "displayName --> $displayName<br>";
 $userId = $obj_profile['userId'];
-echo "userId --> $userId";
+echo "userId --> $userId<br>";
 $pictureUrl = $obj_profile['pictureUrl'];
-echo "pictureUrl --> $pictureUrl";
+echo "pictureUrl --> $pictureUrl<br>";
 $statusMessage = $obj_profile['statusMessage'];
 echo "statusMessage --> $statusMessage";
 
 //echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
-window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
-window.close();
+    window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
+    window.close();
+
+
+
 
 </script>
 
-//    "userId":"Ufr47556f2e40dba2456887320ba7c76d",
-//  "displayName":"Brown",
-//  "pictureUrl":"https://example.com/abcdefghijklmn",
-//  "statusMessage":"Hello, LINE!"
+
