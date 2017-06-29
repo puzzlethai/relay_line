@@ -76,7 +76,7 @@ function getProfile($token){
 $ozone = $obj['access_token'];
 echo 'token : '.$ozone."<br>";
 
-$obj_profile = json_decode(getProfile($obj['access_token']),true);
+$obj_profile = json_decode(getProfile($ozone),true);
 echo "obj_profile --> $obj_profile<br>";
 $displayName = $obj_profile['displayName'];
 echo "displayName --> $displayName<br>";
@@ -90,12 +90,8 @@ echo "statusMessage --> $statusMessage";
 //echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
-    window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
+    //window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
     window.close();
-
-
-
-
 </script>
 
 
