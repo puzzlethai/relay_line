@@ -90,6 +90,8 @@ echo "statusMessage --> $statusMessage";
 //echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
+    var JSDATA = <?=json_encode($displayName, JSON_HEX_TAG | JSON_HEX_AMP )?>;
+    window.opener.callAlert(JSDATA);
     //window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
     window.close();
 </script>
