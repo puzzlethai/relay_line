@@ -19,7 +19,7 @@ echo 'test echo';
 $client_id = "1519057505";
 $client_secret = "5997cf65a3c3789378fa99526d0f1b8c";
 $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com";
-$token = "";
+// $token = "";
 echo 'echo 2   ';
 function getToken($code){
     global $client_id, $client_secret,$redirect_uri;
@@ -44,8 +44,8 @@ function getToken($code){
     return $response;
 }
 
-function getProfile(){
-    global $token;
+function getProfile($token){
+   // global ;
 
     $curl = curl_init();
 
@@ -68,9 +68,9 @@ function getProfile(){
 
 
 $obj = json_decode(getToken($_GET['code']),true);
-$token = $obj['access_token'];
-echo 'token:'.$token."<br>";
-$obj_profile = json_decode(getProfile(),true);
+$ozone = $obj['access_token'];
+echo 'token:'.$ozone."<br>";
+$obj_profile = json_decode(getProfile($ozone),true);
 $displayName = $obj_profile['displayName'];
 $userId = $obj_profile['userId'];
 $pictureUrl = $obj_profile['pictureUrl'];
