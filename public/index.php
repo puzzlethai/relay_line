@@ -1,5 +1,5 @@
 <?php
-echo 'test echo';
+//echo 'test echo';
 /**
  * Created by IntelliJ IDEA.
  * User: OZONE
@@ -27,7 +27,6 @@ $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com";
 // $token = "";
 
 function getToken($code){
-    alert("token");
     global $client_id, $client_secret,$redirect_uri;
 
     $curl = curl_init();
@@ -52,8 +51,7 @@ function getToken($code){
 
 function getProfile($token){
    // global ;
-    alert("profile");
-alert($token);
+
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -78,8 +76,8 @@ alert($token);
 
 
 $ozone = $obj['access_token'];
-echo 'token --> '.$ozone."<br>";
-$obj_profile = json_decode(getProfile($obj['access_token']),true);
+echo 'token:'.$ozone."<br>";
+$obj_profile = json_decode(getProfile($ozone),true);
 $displayName = $obj_profile['displayName'];
 $userId = $obj_profile['userId'];
 $pictureUrl = $obj_profile['pictureUrl'];
