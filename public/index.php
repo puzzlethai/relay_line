@@ -77,11 +77,12 @@ $pictureUrl = $obj_profile['pictureUrl'];
 $statusMessage = $obj_profile['statusMessage'];
 echo ' ';
 echo $userId;
-/*
-window.opener.loginCallback("<?php echo $token ?>");
+?>
+<script language="JavaScript">
+//window.opener.loginCallback("<?php //echo $token ?>//","<?php //echo $displayName ?>//","<?php //echo $userId ?>//","<?php //echo $pictureUrl ?>//","<?php //echo $statusMessage ?>//");
 window.close();
-*/
 
+</script>
 /*window.opener.loginCallback("<?php echo $token ?>","<?php echo $displayName ?>","<?php echo $userId ?>","<?php echo $pictureUrl ?>","<?php echo $statusMessage ?>");
 */
 //    "userId":"Ufr47556f2e40dba2456887320ba7c76d",
