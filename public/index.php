@@ -19,6 +19,10 @@ echo 'test echo';
 $client_id = "1519057505";
 $client_secret = "5997cf65a3c3789378fa99526d0f1b8c";
 $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com";
+global $ozone ="first";
+echo $ozone;
+exit();
+
 // $token = "";
 echo 'echo 2   ';
 function getToken($code){
