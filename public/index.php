@@ -90,8 +90,9 @@ echo "statusMessage --> $statusMessage";
 //echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
-    localStorage.setItem("displayName","BEE");
-    alert("set to BEE");
+    // localStorage.setItem("displayName","BEE");
+    var par = parent.window.opener;
+    alert(par);
 //    if (parent.window.opener != null) {
 //        var textName = parent.window.opener.document.getElementById("txtName");
 //        textName.setAttribute("value","EAK");
