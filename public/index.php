@@ -91,11 +91,11 @@ echo "statusMessage --> $statusMessage";
 ?>
 <script language="JavaScript">
     if (parent.window.opener != null) {
-        //var txtName = parent.window.opener.document.getElementById("txtName");
-        //txtName.setAttribute("value","EAK");
-        //txtName.value = "BEE";
-        //alert("found opener -->"+txtName.value);
-        alert("found opener");
+        var textName = parent.window.opener.document.getElementById("txtName");
+        textName.setAttribute("value","EAK");
+        // textName.value = "BEE";
+        alert("found opener -->"+textName.value);
+        // alert("found opener");
     } else {
         alert("Not found opener");
     }
