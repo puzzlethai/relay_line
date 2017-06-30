@@ -92,7 +92,7 @@ echo "statusMessage --> $statusMessage";
 <script language="JavaScript">
     if (window.opener != null) {
         var txtName = window.opener.document.getElementById("txtName");
-        txtName.setAttribute("value","BEE");
+        txtName.setAttribute("value","EAK");
         //txtName.value = "BEE";
         alert("found opener -->"+txtName.value);
     } else {
