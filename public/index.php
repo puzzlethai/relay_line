@@ -90,15 +90,17 @@ echo "statusMessage --> $statusMessage";
 //echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
-    if (parent.window.opener != null) {
-        var textName = parent.window.opener.document.getElementById("txtName");
-        textName.setAttribute("value","EAK");
-        // textName.value = "BEE";
-        alert("found opener -->"+textName.value);
-        // alert("found opener");
-    } else {
-        alert("Not found opener");
-    }
+    localStorage.setItem("displayName","BEE");
+    alert("set to BEE");
+//    if (parent.window.opener != null) {
+//        var textName = parent.window.opener.document.getElementById("txtName");
+//        textName.setAttribute("value","EAK");
+//        // textName.value = "BEE";
+//        alert("found opener -->"+textName.value);
+//        // alert("found opener");
+//    } else {
+//        alert("Not found opener");
+//    }
     //window.opener.location.href("https://puzzlethai.github.io/testLineLogin/index.html");
     //window.opener.localStorage.setItem("displayName"."ozone");
    // window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
