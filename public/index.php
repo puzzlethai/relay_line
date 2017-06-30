@@ -92,7 +92,8 @@ echo "statusMessage --> $statusMessage";
 <script language="JavaScript">
     if (window.opener != null) {
         var txtName = window.opener.document.getElementById("txtName");
-        txtName.value ="BEE";
+        txtName.setAttribute("value","BEE");
+        //txtName.value = "BEE";
         alert("found opener -->"+txtName.value);
     } else {
         alert("Not found opener");
@@ -100,7 +101,7 @@ echo "statusMessage --> $statusMessage";
     //window.opener.location.href("https://puzzlethai.github.io/testLineLogin/index.html");
     //window.opener.localStorage.setItem("displayName"."ozone");
    // window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
-    window.close();
+    //window.close();
 </script>
 
 
