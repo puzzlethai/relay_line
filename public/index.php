@@ -69,14 +69,15 @@ function getProfile($token){
     return $response;
 }
 
-global $displayName;
+global $line_profile;
     $obj = json_decode(getToken($_GET['code']),true);
 
 
 $ozone = $obj['access_token'];
 echo 'token : '.$ozone."<br>";
 
-$obj_profile = json_decode(getProfile($ozone),true);
+$line_profile = getProfile($ozone);
+$obj_profile = json_decode($line_profile,true);
 echo "obj_profile --> $obj_profile<br>";
 $displayName = $obj_profile['displayName'];
 echo "displayName --> $displayName<br>";
@@ -105,7 +106,7 @@ echo "statusMessage --> $statusMessage";
     //window.opener.location.href("https://puzzlethai.github.io/testLineLogin/index.html");
     //window.opener.localStorage.setItem("displayName"."ozone");
    // window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
-    window.opener.postMessage({token: 'aaa', secret: 'bbb'}, '*');
+    window.opener.postMessage(<?php echo $line_profile ?>, '*');
     window.close();
 </script>
 
