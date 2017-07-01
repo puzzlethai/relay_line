@@ -1,30 +1,10 @@
 <?php
-//echo 'test echo';
-/**
- * Created by IntelliJ IDEA.
- * User: OZONE
- * Date: 19/6/2560
- * Time: 10:32
- *     <!--const channel_ID = '1519057505';-->
- *   <!--const channel_Secret =   '5997cf65a3c3789378fa99526d0f1b8c';-->
- *    <!--const callback_url = 'https://puzzlethai.github.io/testLineLogin/';-->
- *
- *
- *
- *
- *
- *
- */
+
 
 $client_id = "1519057505";
 $client_secret = "5997cf65a3c3789378fa99526d0f1b8c";
 $redirect_uri = "https%3A%2F%2Frelayline.herokuapp.com";
-//global $ozone;
-//$ozone="first";
-//echo $ozone."<br>";
 
-
-// $token = "";
 
 function getToken($code){
     global $client_id, $client_secret,$redirect_uri;
@@ -49,7 +29,7 @@ function getToken($code){
 }
 
 function getProfile($token){
-   // global ;
+
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -74,40 +54,17 @@ global $line_profile;
 
 
 $ozone = $obj['access_token'];
-echo 'token : '.$ozone."<br>";
 
 $line_profile = getProfile($ozone);
 $obj_profile = json_decode($line_profile,true);
-echo "obj_profile --> $obj_profile<br>";
 $displayName = $obj_profile['displayName'];
-echo "displayName --> $displayName<br>";
 $userId = $obj_profile['userId'];
-echo "userId --> $userId<br>";
 $pictureUrl = $obj_profile['pictureUrl'];
-echo "pictureUrl --> $pictureUrl<br>";
 $statusMessage = $obj_profile['statusMessage'];
-echo "statusMessage --> $statusMessage";
-
-//echo 'userId'.$userId."<br>";
 ?>
 <script language="JavaScript">
-    // localStorage.setItem("displayName","BEE");
-//    var par = parent.window.opener;
-//    alert(par);
-//    if (parent.window.opener != null) {
-//        var textName = parent.window.opener.document.getElementById("txtName");
-//        textName.setAttribute("value","EAK");
-//        // textName.value = "BEE";
-//        alert("found opener -->"+textName.value);
-//        // alert("found opener");
-//    } else {
-//        alert("Not found opener");
-//    }
-    //window.opener.location.href("https://puzzlethai.github.io/testLineLogin/index.html");
-    //window.opener.localStorage.setItem("displayName"."ozone");
-   // window.opener.loginCallback("jZBMPGeMl4yeyfOW7mWX4BbKxu4zd94ail3hcFOBXEj8vWkOUD4CwIW+dtMGnmf//yS92Frun3Vc2cJg6ET19WfXrK2YJyIozoBbSE8NVeFXkLqaLhAK21+q8b3OoDHMGdyhxqZnZdlwcp+fbwgG3maJVKly+BFdfGdzL73njOw=","11","22","33","44");
     window.opener.postMessage(<?php echo $line_profile ?>, 'https://puzzlethai.github.io');
-    //window.close();
+    window.close();
 </script>
 
 
